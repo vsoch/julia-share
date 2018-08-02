@@ -2,6 +2,7 @@
 
 This is a notebook modified from the [datascience-notebook](https://github.com/jupyter/docker-stacks/blob/master/datascience-notebook/README.md) stack. It includes many more packages for Julia+Jupyter.
 
+[![CircleCI](https://circleci.com/gh/vsoch/julia-share.svg?style=svg)](https://circleci.com/gh/vsoch/julia-share)
 
 ## Usage
 
