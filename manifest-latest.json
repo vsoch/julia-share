@@ -1,14 +1,14 @@
 [
     {
-        "Id": "sha256:8deec1ad2195c18c2499f829a3fe6268d14e368366aa6aec182eccd640512c0b",
+        "Id": "sha256:1150473c3d8b44f11cf4db9f3bc988e95babb5514e5b922ff1eeec993f4b5145",
         "RepoTags": [
-            "vanessa/julia-share:02857c0ec6"
+            "vanessa/julia-share:a320128b29"
         ],
         "RepoDigests": [],
         "Parent": "",
         "Comment": "",
-        "Created": "2018-08-02T06:59:25.973390709Z",
-        "Container": "390ff979e6c3db51731d0b4454425ce455b3bd8bc66566986b47ed48b9a7a0de",
+        "Created": "2018-08-02T08:08:14.462345189Z",
+        "Container": "e34e1e92b03f7cc45506be909a26f0883938d50f7212d4266f8f138790345999",
         "ContainerConfig": {
             "Hostname": "",
             "Domainname": "",
@@ -44,7 +44,7 @@
                 "julia -e 'Pkg.init()' &&     julia -e 'Pkg.update()' &&     julia -e 'Pkg.add(\"HDF5\")' &&     julia -e 'Pkg.add(\"Gadfly\")' && \tjulia -e 'Pkg.add(\"Convex\")' &&     julia -e 'Pkg.add(\"RDatasets\")' &&     julia -e 'Pkg.add(\"IJulia\")' &&     julia -e 'Pkg.add(\"Ipopt\")' &&     julia -e 'Pkg.add(\"JuMP\")' &&     julia -e 'Pkg.add(\"Spectra\")' &&     julia -e 'Pkg.add(\"SQLite\")' &&     julia -e 'Pkg.add(\"LsqFit\")' &&     julia -e 'Pkg.add(\"Optim\")' &&     julia -e 'Pkg.add(\"NMF\")' &&     julia -e 'Pkg.add(\"DataFrames\")' &&     julia -e 'Pkg.add(\"JLD\")' &&     julia -e 'Pkg.add(\"Plots\")' &&     julia -e 'Pkg.add(\"PyCall\")' &&     julia -e 'Pkg.add(\"QuantEcon\")' &&     julia -e 'Pkg.add(\"PyPlot\")' &&     julia -e 'Pkg.add(\"ExcelReaders\")' &&     julia -e 'Pkg.add(\"Dierckx\")' &&     julia -e 'Pkg.add(\"ProgressMeter\")' &&     julia -e 'Pkg.add(\"SCS\")' &&     julia -e 'Pkg.update()' &&     julia -e 'using HDF5' &&     julia -e 'using Gadfly' &&     julia -e 'using RDatasets' &&     julia -e 'using IJulia' && \tjulia -e 'using Spectra' &&     mv $HOME/.local/share/jupyter/kernels/julia* $CONDA_DIR/share/jupyter/kernels/ &&     chmod -R go+rx $CONDA_DIR/share/jupyter &&     rm -rf $HOME/.local"
             ],
             "ArgsEscaped": true,
-            "Image": "sha256:29ec7bca4c12bfd2ed5e2be05b6224663d6006d80c91d51a6015d29962c7ee2b",
+            "Image": "sha256:3078d3067b35e98c091a79ec0e8b58af16a0d6180e2af4f4c1efa77748db4c74",
             "Volumes": null,
             "WorkingDir": "/home/jovyan",
             "Entrypoint": null,
@@ -88,7 +88,7 @@
                 "start-notebook.sh"
             ],
             "ArgsEscaped": true,
-            "Image": "sha256:29ec7bca4c12bfd2ed5e2be05b6224663d6006d80c91d51a6015d29962c7ee2b",
+            "Image": "sha256:3078d3067b35e98c091a79ec0e8b58af16a0d6180e2af4f4c1efa77748db4c74",
             "Volumes": null,
             "WorkingDir": "/home/jovyan",
             "Entrypoint": [
@@ -103,8 +103,8 @@
         },
         "Architecture": "amd64",
         "Os": "linux",
-        "Size": 6572389099,
-        "VirtualSize": 6572389099,
+        "Size": 6574108085,
+        "VirtualSize": 6574108085,
         "GraphDriver": {
             "Data": null,
             "Name": "aufs"
@@ -135,13 +135,13 @@
                 "sha256:10e6ea863c5bb4beaf84e877a36871daf2f9b622bb361f79cbac39f786ff7388",
                 "sha256:e4e447fda8420ccf2c53c3324aa085db6ec21fd988eb1d2b1932480aa3090525",
                 "sha256:b4f5053c364c9c1c3f9635670e8dfd1ef51aed619663c8daef0cc90f59b25fe1",
-                "sha256:506b0417f51be70ea46acca2d4c5ce94615c7f45eb1004aa37add45ad7f83c94",
-                "sha256:7edbd5320d654c0b216bd8892e5ed5a97dde3edca0b7b8d09724f1fefb12000c",
-                "sha256:58d7855707cee0db936d0a1efa4dbf73a744104a36d6b56492889d72e25a0068",
-                "sha256:dc543f823402aa7d472e4ceaea2c9ff3c1d2ec273ab801ad9a34619ccb3f733a",
-                "sha256:46ba3a6f001a723e3d83e7bc6a663bf7f5b53f151ac6bcf6843f4c121d63bcc0",
-                "sha256:3f4196cb092144d7e8a84c8339b5b4f759e4cf648c644a535b3f214f3506c61e",
-                "sha256:4ea8c14a4d913e9d14b85d45d36cd6a03f69b172b9d99d9eb8bde38b07dd89d2"
+                "sha256:ddb31bb1218af621944a0c144aa59561afb608af26c7f11335d05d6a31866245",
+                "sha256:4955e3b38ee9540c0e1e94de35502e03c9bda63f35b0a2e6a94fd56701182c10",
+                "sha256:4f99d66df288f42421a6d4c7c05c4b3a170d602cf0b1a84c95cd1cba9f8f0e8f",
+                "sha256:8e73a036f2692d68498afab5dd55aa2e7408ebe527e6451b6babee540076f6cf",
+                "sha256:0c654636377915a118cc149f1cec3452a21a5ebfa2471ce603d3a95773762236",
+                "sha256:7340d62801140ba51801c0fe9c8e6796f066df86d90c271ef3144e3a7dcd8b26",
+                "sha256:7f7184a2f0ae5f16954de971213d574a65ccf06617ac4fdd7228e444a3f14ad1"
             ]
         },
         "Metadata": {
