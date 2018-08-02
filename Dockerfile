@@ -1,0 +1,72 @@
+# Initial Copyright (c) Jupyter Development Team.
+# Distributed under the terms of the Modified BSD License.
+# CHANGELOG ====================================================================
+# Original file from https://github.com/jupyter/docker-stacks/blob/master/datascience-notebook/Dockerfile
+# Modified by Charles Le Losq to offer more Julia facilities out of the box (and removed R).
+# Modified by @vsoch to add more packages and work with containershare tool
+# docker build -t vanessa/julia-share .
+# docker run --rm -p 8888:8888 -e JUPYTER_LAB_ENABLE=yes -v "$PWD":/home/jovyan/work vanessa/julia-share
+FROM jupyter/scipy-notebook
+USER root
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    fonts-dejavu \
+    gfortran \
+    gcc && apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+RUN pip install gcvspline
+RUN pip install rampy
+# Julia dependencies
+# install Julia packages in /opt/julia instead of $HOME
+ENV JULIA_PKGDIR=/opt/julia
+RUN apt-get update && apt-get install -my wget gnupg && \
+    wget https://julialang-s3.julialang.org/bin/linux/x64/0.6/julia-0.6.4-linux-x86_64.tar.gz && \
+    tar -xzvf julia-0.6.4-linux-x86_64.tar.gz && ls && \
+    cp -R julia-9d11f62bcb/* /usr
+    # Show Julia where conda libraries are \
+RUN echo "push!(Libdl.DL_LOAD_PATH, \"$CONDA_DIR/lib\")" >> /usr/etc/julia/juliarc.jl && \
+    # Create JULIA_PKGDIR \
+    mkdir $JULIA_PKGDIR && \
+    chown -R $NB_USER:users $JULIA_PKGDIR
+RUN apt-get install libnlopt0
+USER $NB_USER
+# Add Julia packages
+# Install IJulia as jovyan and then move the kernelspec out
+# to the system share location. Avoids problems with runtime UID change not
+# taking effect properly on the .local folder in the jovyan home dir.
+RUN julia -e 'Pkg.init()' && \
+    julia -e 'Pkg.update()' && \
+    julia -e 'Pkg.add("HDF5")' && \
+    julia -e 'Pkg.add("Gadfly")' && \
+	julia -e 'Pkg.add("Convex")' && \
+    julia -e 'Pkg.add("RDatasets")' && \
+    julia -e 'Pkg.add("IJulia")' && \
+    julia -e 'Pkg.add("Ipopt")' && \
+    julia -e 'Pkg.add("JuMP")' && \
+    julia -e 'Pkg.add("Spectra")' && \
+    julia -e 'Pkg.add("SQLite")' && \
+    julia -e 'Pkg.add("LsqFit")' && \
+    julia -e 'Pkg.add("Optim")' && \
+    julia -e 'Pkg.add("NMF")' && \
+    julia -e 'Pkg.add("DataFrames")' && \
+    julia -e 'Pkg.add("JLD")' && \
+    julia -e 'Pkg.add("Plots")' && \
+    julia -e 'Pkg.add("PyCall")' && \
+    julia -e 'Pkg.add("QuantEcon")' && \
+    julia -e 'Pkg.add("PyPlot")' && \
+    julia -e 'Pkg.add("ExcelReaders")' && \
+    julia -e 'Pkg.add("Dierckx")' && \
+    julia -e 'Pkg.add("ProgressMeter")' && \
+    julia -e 'Pkg.add("SCS")' && \
+    # Updating everything
+    julia -e 'Pkg.update()' && \
+    # Precompile Julia packages \
+    julia -e 'using HDF5' && \
+    julia -e 'using Gadfly' && \
+    julia -e 'using RDatasets' && \
+    julia -e 'using IJulia' && \
+	julia -e 'using Spectra' && \
+    # move kernelspec out of home \
+    mv $HOME/.local/share/jupyter/kernels/julia* $CONDA_DIR/share/jupyter/kernels/ && \
+    chmod -R go+rx $CONDA_DIR/share/jupyter && \
+    rm -rf $HOME/.local
