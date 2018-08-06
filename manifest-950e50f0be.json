@@ -1,0 +1,153 @@
+[
+    {
+        "Id": "sha256:c741e53d37b1f2bb574a03df9baa830e35711535bca443c8671da05bc3551a35",
+        "RepoTags": [
+            "vanessa/julia-share:950e50f0be"
+        ],
+        "RepoDigests": [
+            "vanessa/julia-share@sha256:ee0e219b201ca01b03cf43d3245a126fe74985b1a5405664042dc9dad7b6b2db"
+        ],
+        "Parent": "",
+        "Comment": "",
+        "Created": "2018-08-06T11:25:12.235721049Z",
+        "Container": "25432ae19ab5f116e4488fb555d443a20c1614991220ce5e9dbbf7fa7a053a74",
+        "ContainerConfig": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "jovyan",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "8888/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/opt/conda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive",
+                "CONDA_DIR=/opt/conda",
+                "SHELL=/bin/bash",
+                "NB_USER=jovyan",
+                "NB_UID=1000",
+                "NB_GID=100",
+                "LC_ALL=en_US.UTF-8",
+                "LANG=en_US.UTF-8",
+                "LANGUAGE=en_US.UTF-8",
+                "HOME=/home/jovyan",
+                "MINICONDA_VERSION=4.5.4",
+                "XDG_CACHE_HOME=/home/jovyan/.cache/",
+                "JULIA_PKGDIR=/opt/julia"
+            ],
+            "Cmd": [
+                "/bin/sh",
+                "-c",
+                "julia -e 'Pkg.init()' &&     julia -e 'Pkg.update()' &&     julia -e 'Pkg.add(\"HDF5\")' &&     julia -e 'Pkg.add(\"Gadfly\")' && \tjulia -e 'Pkg.add(\"Convex\")' &&     julia -e 'Pkg.add(\"RDatasets\")' &&     julia -e 'Pkg.add(\"IJulia\")' &&     julia -e 'Pkg.add(\"Ipopt\")' &&     julia -e 'Pkg.add(\"JuMP\")' &&     julia -e 'Pkg.add(\"Spectra\")' &&     julia -e 'Pkg.add(\"SQLite\")' &&     julia -e 'Pkg.add(\"LsqFit\")' &&     julia -e 'Pkg.add(\"Optim\")' &&     julia -e 'Pkg.add(\"NMF\")' &&     julia -e 'Pkg.add(\"DataFrames\")' &&     julia -e 'Pkg.add(\"JLD\")' &&     julia -e 'Pkg.add(\"Plots\")' &&     julia -e 'Pkg.add(\"PyCall\")' &&     julia -e 'Pkg.add(\"QuantEcon\")' &&     julia -e 'Pkg.add(\"PyPlot\")' &&     julia -e 'Pkg.add(\"ExcelReaders\")' &&     julia -e 'Pkg.add(\"Dierckx\")' &&     julia -e 'Pkg.add(\"ProgressMeter\")' &&     julia -e 'Pkg.add(\"SCS\")' &&     julia -e 'Pkg.update()' &&     julia -e 'using HDF5' &&     julia -e 'using Gadfly' &&     julia -e 'using RDatasets' &&     julia -e 'using IJulia' && \tjulia -e 'using Spectra' &&     mv $HOME/.local/share/jupyter/kernels/julia* $CONDA_DIR/share/jupyter/kernels/ &&     chmod -R go+rx $CONDA_DIR/share/jupyter &&     rm -rf $HOME/.local"
+            ],
+            "ArgsEscaped": true,
+            "Image": "sha256:1a483862baaa4e8f60ff6dca2d0484767dc7270ad6a252c3fbffa140897c3fa6",
+            "Volumes": null,
+            "WorkingDir": "/home/jovyan",
+            "Entrypoint": null,
+            "OnBuild": [],
+            "Labels": {
+                "maintainer": "Jupyter Project <jupyter@googlegroups.com>"
+            }
+        },
+        "DockerVersion": "17.09.0-ce",
+        "Author": "",
+        "Config": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "jovyan",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "8888/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/opt/conda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive",
+                "CONDA_DIR=/opt/conda",
+                "SHELL=/bin/bash",
+                "NB_USER=jovyan",
+                "NB_UID=1000",
+                "NB_GID=100",
+                "LC_ALL=en_US.UTF-8",
+                "LANG=en_US.UTF-8",
+                "LANGUAGE=en_US.UTF-8",
+                "HOME=/home/jovyan",
+                "MINICONDA_VERSION=4.5.4",
+                "XDG_CACHE_HOME=/home/jovyan/.cache/",
+                "JULIA_PKGDIR=/opt/julia"
+            ],
+            "Cmd": [
+                "start-notebook.sh"
+            ],
+            "ArgsEscaped": true,
+            "Image": "sha256:1a483862baaa4e8f60ff6dca2d0484767dc7270ad6a252c3fbffa140897c3fa6",
+            "Volumes": null,
+            "WorkingDir": "/home/jovyan",
+            "Entrypoint": [
+                "tini",
+                "-g",
+                "--"
+            ],
+            "OnBuild": [],
+            "Labels": {
+                "maintainer": "Jupyter Project <jupyter@googlegroups.com>"
+            }
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 6574091083,
+        "VirtualSize": 6574091083,
+        "GraphDriver": {
+            "Data": null,
+            "Name": "aufs"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:65bdd50ee76a485049a2d3c2e92438ac379348e7b576783669dac6f604f6241b",
+                "sha256:ec75999a0cb1218bbfedeaf535afb516b739c0a2475f89d6c8bdf6ccfdf73c85",
+                "sha256:67885e448177114ca1d82161955ba7400139b5acc1e9cca633dfff163ccdb1b6",
+                "sha256:8db5f072feeccc451f94b357a1f596dd455859807917e7c98ed7264601043cbf",
+                "sha256:059ad60bcacfe9c03116f467f9e025f3519d1641358e0422bee478445d679313",
+                "sha256:579fe9ead074fd165aeb3dabe2bb4641bc02416e3175c56aa6a7e8f8cf6c10c4",
+                "sha256:89b098dfc824803ba9637eb8936dfe1190f260a3cc6ab2abeed665e3b47c6997",
+                "sha256:f141044abddc77426cb95450ebde8dcce125a1870f6c3652073c77964d2c7b7f",
+                "sha256:82047668bb427a1db58c3bc187bd5933ef08325b10b31474b6802734ab5f04a7",
+                "sha256:0f17a05e26d1c36f8879ca520ca3f00e51d93a49a125e3d23252a41a2b6d2741",
+                "sha256:e13727e2d6f275c80c11add440764a7312c4ca01f407955d8e83ecfa55a5230f",
+                "sha256:3351c6d3bd636088dae2132c3e6f45ecc9ca6d1795eedd2bbb18df25d9d0b1ef",
+                "sha256:131cbf6699a447e26ca6ad788fb9cb16dbef4f6207a06f171a2bbab1e91e3633",
+                "sha256:044d648f02585e2a2a5a841b78634d512dfe3a719f1d3fdffb5d08f591163242",
+                "sha256:dfa987c08281e6156574dfed1317f25792152d21164ab8f6fb7dad0be8cc1015",
+                "sha256:59c53df1405da4b95a8781cb48b8c03c928d72c02bf78da99e9ce262e1ac3cab",
+                "sha256:9c3728da2b2963eac3d7be17cb51ab952c45d9261c49821e3078fc86c82aaf2a",
+                "sha256:d43923f9f7e2a38418f0119a0f34d8deb95d2f958de9eea42ba176219484a7d4",
+                "sha256:4fd9b6e9e8988fc32de97d4ee7ff7c7988762f7a04df69782397bd918d888b80",
+                "sha256:819b56afcb912d3d1878f075e564d1730a39b456342e245e2e62e0ccb035f382",
+                "sha256:82e0e730a06d779ed35188c98ad3423630ab7724543c1babc0c84846976744f1",
+                "sha256:89ee12e840cfb5a1da3a00a70febccd4ad987220244b5b6b91844341c0eaec11",
+                "sha256:50abffba05ab69ec8cb04f4e7d3ce07c29d1746875630275e686a05d8e251984",
+                "sha256:573907795292b60b6262f243384b26d0dfdff75c1df327ac6433482c65f7ff2e",
+                "sha256:45b7d276bd2e6c907085d1977d080bdd814dfba8a0a2646fd0114820d794255c",
+                "sha256:bcef9d34c7dfe1a6f343c0d577602e9d732562bb18ed389caadfbd2d248a8cd8",
+                "sha256:b2acfee0d15a1ba5336cec04809277517fa2b204f7a018a12bcaabf91a23cda5",
+                "sha256:9b88e9a6b812b74fce316064ad3723976d2e59ce0b035dac90c9fc68335ae6df",
+                "sha256:56ecd8e5060407cdb90ad38de05c75978cd0c174b273dd82134768359b4baff5",
+                "sha256:8748e970d00f59374f5f5955875c73ad1e61c7c7e1e0a474ee3c57663f44db9e"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "0001-01-01T00:00:00Z"
+        }
+    }
+]
